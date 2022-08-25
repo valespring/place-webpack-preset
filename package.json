@@ -1,20 +1,51 @@
 {
-  "name": "place-webpack-preset",
-  "version": "1.0.0",
-  "description": "A webpack baseline for Place Framework.",
-  "main": "index.js",
-  "author": "Brian Kelley",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/valespring/place-webpack-preset.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/valespring/place-webpack-preset/issues"
-  },
-  "homepage": "https://github.com/valespring/place-webpack-preset#readme"
+	"name": "place-webpack-preset",
+	"version": "1.0.0",
+	"description": "A webpack baseline for Place Framework.",
+	"main": "index.js",
+	"author": "",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "npx eslint src",
+		"lint:fix": "npm run lint -- --fix",
+		"prettier": "npx prettier src --check",
+		"prettier:fix": "npm run prettier -- --write",
+		"format": "npm run prettier:fix && npm run lint:fix"
+	},
+	"prettier": "./node_modules/@valespring/valespring-code-config/prettier.config.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/valespring/place-webpack-preset.git"
+	},
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.11.6",
+		"@babel/preset-env": "^7.11.5",
+		"@valespring/valespring-code-config": "^1.0.2",
+		"autoprefixer": "^9.8.6",
+		"babel-loader": "^8.1.0",
+		"clean-webpack-plugin": "^3.0.0",
+		"css-loader": "^4.2.2",
+		"file-loader": "^6.1.0",
+		"html-critical-webpack-plugin": "^2.1.0",
+		"html-webpack-harddisk-plugin": "^2.0.0",
+		"html-webpack-plugin": "^5.5.0",
+		"mini-css-extract-plugin": "^0.11.0",
+		"place-framework": "^1.1.5",
+		"postcss": "^7.0.32",
+		"postcss-loader": "^3.0.0",
+		"prettier-webpack-plugin": "^1.2.0",
+		"sass": "^1.26.10",
+		"sass-loader": "^10.0.2",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.0"
+	},
+	"bugs": {
+		"url": "https://github.com/valespring/place-webpack-preset/issues"
+	},
+	"homepage": "https://github.com/valespring/place-webpack-preset#readme",
+	"dependencies": {
+		"webpack-merge": "^5.8.0"
+	}
 }

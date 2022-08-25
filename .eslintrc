@@ -1,0 +1,5 @@
+{
+   "extends": [
+    "./node_modules/@valespring/valespring-code-config/"
+   ]
+}
