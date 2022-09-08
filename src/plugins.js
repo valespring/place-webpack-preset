@@ -1,6 +1,8 @@
-const prettierConfig = require('@valespring/valespring-code-config/prettier.config');
+const packageInfo = require('../package.json');
+
+const prettierConfig = require(packageInfo.config.prettier.path).default;
 const prettierPluginConfig =
-	require('@valespring/valespring-code-config/config-prettier').scss;
+	require(packageInfo.config.prettier.path).scss;
 const plugins = {
 	MiniCssExtractPlugin: require('mini-css-extract-plugin'),
 	HtmlWebpackHarddiskPlugin: require('html-webpack-harddisk-plugin'),
