@@ -6,8 +6,12 @@ exports.default = {
 		{
 			test: /\.s?css$/,
 			use: [
-				
-				webpackPlugins.MiniCssExtractPlugin.loader,
+				{
+					loader: webpackPlugins.MiniCssExtractPlugin.loader,
+					options: {
+						publicPath: ''
+					}
+				},
 				'css-loader',
 				{
 					loader: 'postcss-loader',

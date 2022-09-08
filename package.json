@@ -1,6 +1,6 @@
 {
 	"name": "place-webpack-preset",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"description": "A baseline webpack configuration used in conjunction with Place Framework.",
 	"main": "index.js",
 	"author": "Brian Kelley",
@@ -15,7 +15,7 @@
 		"prettier:fix": "npm run prettier -- --write",
 		"format": "npm run prettier:fix && npm run lint:fix"
 	},
-	"prettier": "./node_modules/@valespring/valespring-code-config/prettier.config.js",
+	"prettier": "./node_modules/@valespring/code-config/prettier.config.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/valespring/place-webpack-preset.git"
