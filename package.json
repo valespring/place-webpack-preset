@@ -1,14 +1,17 @@
 {
 	"name": "place-webpack-preset",
 	"version": "1.0.0",
-	"description": "A webpack baseline for Place Framework.",
+	"description": "A baseline webpack configuration used in conjunction with Place Framework.",
 	"main": "index.js",
-	"author": "",
+	"author": "Brian Kelley",
+	"config": {
+		"targets": "index.js config.js src"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"lint": "npx eslint src",
+		"lint": "npx eslint $npm_package_config_targets",
 		"lint:fix": "npm run lint -- --fix",
-		"prettier": "npx prettier src --check",
+		"prettier": "npx prettier $npm_package_config_targets --check",
 		"prettier:fix": "npm run prettier -- --write",
 		"format": "npm run prettier:fix && npm run lint:fix"
 	},
@@ -31,13 +34,12 @@
 		"html-webpack-harddisk-plugin": "^2.0.0",
 		"html-webpack-plugin": "^5.5.0",
 		"mini-css-extract-plugin": "^1.6.2",
-		"place-framework": "^1.1.5",
 		"postcss": "^7.0.32",
 		"postcss-loader": "^3.0.0",
 		"prettier-webpack-plugin": "^1.2.0",
-		"sass": "^1.26.10",
-		"sass-loader": "^10.0.2",
-		"webpack": "^4.44.1",
+		"sass": "^1.54.8",
+		"sass-loader": "^10.0",
+		"webpack": "^5.0.0",
 		"webpack-merge": "^5.8.0"
 	},
 	"bugs": {

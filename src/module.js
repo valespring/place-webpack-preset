@@ -1,6 +1,5 @@
 const utils = require('./utils');
 const webpackPlugins = require('./plugins').plugins;
-const rootPath = utils.path.resolve(__dirname, '../');
 
 exports.default = {
 	rules: [
@@ -21,7 +20,7 @@ exports.default = {
 						sassOptions: {
 							includePaths: [
 								utils.path.join(
-									rootPath,
+									process.cwd(),
 									'node_modules/place-framework/scss/'
 								)
 							]
