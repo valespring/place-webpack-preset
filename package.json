@@ -1,6 +1,6 @@
 {
 	"name": "@place-framework/place-webpack-preset",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "A baseline webpack configuration used in conjunction with Place Framework.",
 	"main": "index.js",
 	"author": "Brian Kelley",
@@ -16,7 +16,7 @@
 	},
 	"license": "ISC",
 	"dependencies": {
-		"@place-framework/code-config": "^2.0.6",
+		"@place-framework/code-config": "^2.0.7",
 		"autoprefixer": "^10.4.20",
 		"css-loader": "^7.1.2",
 		"eslint-config-prettier": "^9.1.0",
@@ -36,5 +36,10 @@
 	"bugs": {
 		"url": "https://github.com/valespring/place-webpack-preset/issues"
 	},
-	"homepage": "https://github.com/valespring/place-webpack-preset#readme"
+	"homepage": "https://github.com/valespring/place-webpack-preset#readme",
+	"keywords": [
+		"place framework",
+		"place framework webpack",
+		"place framework webpack preset"
+	]
 }

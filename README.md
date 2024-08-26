@@ -1,4 +1,4 @@
-![Place Framework Header](https://raw.githubusercontent.com/valespring/place-framework/master/docs/logo-header.gif?sanitize=true)
+![PLACE Framework Header](https://raw.githubusercontent.com/valespring/place-framework/master/docs/logo-header.gif?sanitize=true)
 
 
 <p align="center">
@@ -8,15 +8,14 @@
 </p>
 
 
-
 PLACE Webpack Preset
 ====
 
-![Place Framework Ecosystem Diagram](https://raw.githubusercontent.com/valespring/place-framework/master/docs/ecosystem-diagram.jpg?sanitize=true)
+![PLACE Framework Ecosystem Diagram](https://raw.githubusercontent.com/valespring/place-framework/master/docs/ecosystem-diagram.jpg?sanitize=true)
 
 ## Introduction
 
-The premise of this preset is to have a solid jumpoff point with the PLACE framework. It comes with the framework paths included through proper loaders built in for compilation, but needs the framework as a dependency in your root project. Please see the [Vue Starter](https://www.npmjs.com/package/@place-framework/place-framework-starter-vue) for an example.
+The premise of this preset is to have a solid jumpoff point with the PLACE Framework. It comes with the framework paths included through proper loaders built in for compilation, but needs the framework as a dependency in your root project. Please see the [PLACE Vue Starter](https://www.npmjs.com/package/@place-framework/place-framework-starter-vue) for an example.
 
 ## Implementation
 
