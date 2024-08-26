@@ -1,23 +1,27 @@
-const { merge } = require('webpack-merge');
+const UTILITIES = require('./src/utilities');
+const WEBPACK_BASE_PRESET = require('./src/webpack');
+const { merge } = UTILITIES.merge;
 
 class PlaceWebpackPreset {
 	constructor(options) {
-		this.webpackPreset = {};
-		this.subsets = ['module', 'output', 'plugins'];
+		this.webpackBasePreset = WEBPACK_BASE_PRESET(options);
 
-		this.subsets.forEach((subset) => {
-			this.webpackPreset[subset] = require(`./src/${subset}`).default;
-		});
-		// Merge default with layers
-		this.config = PlaceWebpackPreset.mergeConfig(options);
+		// Merge default with user config
+		this.userOptions = PlaceWebpackPreset.mergeConfig(options);
+
+		const mergedConfig = merge(
+			this.webpackBasePreset,
+			this.userOptions.config
+		);
 
 		// Return config
-		return merge(this.webpackPreset, this.config.layer);
+		return mergedConfig;
 	}
 
 	static mergeConfig(options) {
 		const settings = {
-			layer: {}
+			config: {
+			}
 		};
 
 		const userSettings = options;
