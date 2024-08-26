@@ -1,6 +1,7 @@
 module.exports = (options) => {
-	const UTILITIES = require('../../utilities');
+	const CONFIG = require('../../config')(options);
 	const PLUGINS = require('../../plugins')(options);
+	const UTILITIES = require('../../utilities');
 
 	return {
 		rules: [
@@ -18,7 +19,7 @@ module.exports = (options) => {
 					{
 						loader: 'postcss-loader',
 						options: {
-							postcssOptions: {
+							postcssOptions: { 
 								plugins: ['autoprefixer']
 							}
 						}
@@ -31,7 +32,7 @@ module.exports = (options) => {
 								loadPaths: [
 									UTILITIES.path.resolve(
 										process.cwd(),
-										'node_modules/place-framework/scss/'
+										CONFIG.FRAMEWORK_BASE_PATH
 									)
 								]
 							}

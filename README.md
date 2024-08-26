@@ -16,7 +16,7 @@ PLACE Webpack Preset
 
 ## Introduction
 
-The premise of this preset is to have a solid jumpoff point with the PLACE framework. It comes with the framework included through proper loaders built in for compilation.
+The premise of this preset is to have a solid jumpoff point with the PLACE framework. It comes with the framework paths included through proper loaders built in for compilation, but needs the framework as a dependency in your root project. Please see the [Vue Starter](https://www.npmjs.com/package/@place-framework/place-framework-starter-vue) for an example.
 
 ## Implementation
 
@@ -24,6 +24,8 @@ The PLACE Webpack Preset is constructed as a JS class, with options for merging 
 
 ```
 module.exports = (env) => {
+	const PlaceWebpackPreset = require('@place-framework/place-webpack-preset');
+
 	return new PlaceWebpackPreset({
 		config: require('./webpack.your.config'),
 		env

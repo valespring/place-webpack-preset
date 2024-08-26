@@ -1,14 +1,14 @@
 {
 	"name": "@place-framework/place-webpack-preset",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "A baseline webpack configuration used in conjunction with Place Framework.",
 	"main": "index.js",
 	"author": "Brian Kelley",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint:js": "npx eslint .",
-		"lint:js:debug": "DEBUG=eslint:flat-eslint,eslint:cli-engine npm run lint",
-		"lint:js:fix": "npm run lint -- --fix --format summary"
+		"lint:js:debug": "DEBUG=eslint:flat-eslint,eslint:cli-engine npm run lint:js",
+		"lint:js:fix": "npm run lint:js -- --fix --format summary"
 	},
 	"repository": {
 		"type": "git",
@@ -21,6 +21,7 @@
 		"css-loader": "^7.1.2",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-webpack-plugin": "^4.2.0",
+		"mini-css-extract-plugin": "^2.9.1",
 		"postcss": "^8.4.41",
 		"postcss-loader": "^8.1.1",
 		"sass": "^1.77.8",
