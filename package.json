@@ -1,6 +1,6 @@
 {
 	"name": "@place-framework/place-webpack-preset",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"description": "A baseline webpack configuration used in conjunction with Place Framework.",
 	"main": "index.js",
 	"author": "Brian Kelley",
@@ -16,9 +16,12 @@
 	},
 	"license": "ISC",
 	"dependencies": {
+		"@babel/eslint-parser": "^7.25.1",
+		"@babel/preset-env": "^7.25.4",
 		"@place-framework/code-config": "^2.0.7",
 		"autoprefixer": "^10.4.20",
 		"css-loader": "^7.1.2",
+		"dotenv": "^16.4.5",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-webpack-plugin": "^4.2.0",
 		"mini-css-extract-plugin": "^2.9.1",

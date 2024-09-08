@@ -10,15 +10,13 @@ module.exports = (options) => {
 				use: [
 					{
 						loader: PLUGINS.MiniCssExtractPlugin.lib.loader,
-						options: { publicPath: '' }
+						options: PLUGINS.MiniCssExtractPlugin.lib.options
 					},
-					{
-						loader: 'css-loader',
-						options: { esModule: false }
-					},
+					'css-loader',
 					{
 						loader: 'postcss-loader',
 						options: {
+							sourceMap: true,
 							postcssOptions: {
 								plugins: ['autoprefixer']
 							}
@@ -28,6 +26,7 @@ module.exports = (options) => {
 						loader: 'sass-loader',
 						options: {
 							implementation: require('sass'),
+							sourceMap: true,
 							sassOptions: {
 								loadPaths: [
 									UTILITIES.path.resolve(
