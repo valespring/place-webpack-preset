@@ -1,6 +1,6 @@
 {
 	"name": "@place-framework/place-webpack-preset",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "A baseline webpack configuration used in conjunction with Place Framework.",
 	"main": "index.js",
 	"author": "Brian Kelley",
