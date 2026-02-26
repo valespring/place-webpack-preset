@@ -29,6 +29,26 @@ module.exports = (options) => {
 
 	return {
 		rules: [
+			// CSS loader (common to both Vue and React)
+			{
+				test: /\.css$/i,
+				use: ['style-loader', 'css-loader']
+			},
+			// Font assets (common to both Vue and React)
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+				type: 'asset/resource'
+			},
+			// Image and media assets (common to both Vue and React)
+			{
+				test: /\.(png|jpe?g|gif|webm|mp4|mov|svg)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
+					outputPath: CONFIG.OUTPUT_PATH || 'assets',
+					esModule: false
+				}
+			},
 			// Rule for SCSS files imported into JavaScript (for :export syntax)
 			{
 				test: /\.scss$/,

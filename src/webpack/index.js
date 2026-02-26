@@ -1,5 +1,17 @@
 const path = require('path');
 
+// Common extensions used by both Vue and React
+const COMMON_EXTENSIONS = [
+	'.*',
+	'.js',
+	'.jsx',
+	'.ts',
+	'.tsx',
+	'.vue',
+	'.json',
+	'.scss'
+];
+
 module.exports = (options) => {
 	const CONFIG = require('../config')(options);
 	
@@ -25,6 +37,12 @@ module.exports = (options) => {
 	console.log('alias config:', { [CONFIG.SCSS_ALIAS]: frameworkPath });
 	console.log('=== END DEBUG ===');
 
+	// Common stats configuration
+	webpackPreset.stats = {
+		loggingDebug: ['sass-loader']
+	};
+
+	// Common resolve configuration
 	webpackPreset.resolve = {
 		modules: [
 			path.resolve(__dirname, '../../../node_modules'), // Monorepo root node_modules
@@ -32,6 +50,24 @@ module.exports = (options) => {
 		],
 		alias: {
 			[CONFIG.SCSS_ALIAS]: frameworkPath
+		},
+		// Common extensions used by both Vue and React
+		extensions: COMMON_EXTENSIONS
+	};
+
+	// Common optimization configuration
+	webpackPreset.optimization = {
+		moduleIds: 'deterministic',
+		runtimeChunk: 'single',
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					priority: -10,
+					chunks: 'all'
+				}
+			}
 		}
 	};
 
