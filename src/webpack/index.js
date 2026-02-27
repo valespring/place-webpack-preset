@@ -28,15 +28,6 @@ module.exports = (options) => {
 		CONFIG.FRAMEWORK_WORKSPACE_PATH || CONFIG.FRAMEWORK_BASE_PATH
 	);
 
-	console.log('=== WEBPACK ALIAS DEBUG ===');
-	console.log('CONFIG.SCSS_ALIAS:', CONFIG.SCSS_ALIAS);
-	console.log('CONFIG.FRAMEWORK_WORKSPACE_PATH:', CONFIG.FRAMEWORK_WORKSPACE_PATH);
-	console.log('CONFIG.FRAMEWORK_BASE_PATH:', CONFIG.FRAMEWORK_BASE_PATH);
-	console.log('process.cwd():', process.cwd());
-	console.log('frameworkPath:', frameworkPath);
-	console.log('alias config:', { [CONFIG.SCSS_ALIAS]: frameworkPath });
-	console.log('=== END DEBUG ===');
-
 	// Common stats configuration
 	webpackPreset.stats = {
 		loggingDebug: ['sass-loader']
