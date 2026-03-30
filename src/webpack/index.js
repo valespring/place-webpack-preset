@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 // Common extensions used by both Vue and React
 const COMMON_EXTENSIONS = [
@@ -23,10 +24,19 @@ module.exports = (options) => {
 	});
 
 	// Determine the framework path for aliases
-	const frameworkPath = path.resolve(
-		process.cwd(),
-		CONFIG.FRAMEWORK_WORKSPACE_PATH || CONFIG.FRAMEWORK_BASE_PATH
-	);
+	// Check if workspace path exists, otherwise fall back to node_modules
+	let frameworkPath;
+	
+	if (CONFIG.FRAMEWORK_WORKSPACE_PATH) {
+		const workspacePath = path.resolve(process.cwd(), CONFIG.FRAMEWORK_WORKSPACE_PATH);
+		if (fs.existsSync(workspacePath)) {
+			frameworkPath = workspacePath;
+		} else {
+			frameworkPath = path.resolve(process.cwd(), CONFIG.FRAMEWORK_BASE_PATH);
+		}
+	} else {
+		frameworkPath = path.resolve(process.cwd(), CONFIG.FRAMEWORK_BASE_PATH);
+	}
 
 	// Common stats configuration
 	webpackPreset.stats = {
