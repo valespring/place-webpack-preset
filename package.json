@@ -1,6 +1,6 @@
 {
 	"name": "@place-framework/place-webpack-preset",
-	"version": "3.0.5",
+	"version": "3.0.6",
 	"description": "A baseline webpack configuration used in conjunction with Place Framework.",
 	"main": "index.js",
 	"author": "Brian Kelley",
@@ -8,7 +8,10 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint:js": "npx eslint .",
 		"lint:js:debug": "DEBUG=eslint:flat-eslint,eslint:cli-engine npm run lint:js",
-		"lint:js:fix": "npm run lint:js -- --fix --format summary"
+		"lint:js:fix": "npm run lint:js -- --fix --format summary",
+		"update:check": "place-updater --check",
+		"update": "place-updater",
+		"update:publish": "place-updater --publish"
 	},
 	"repository": {
 		"type": "git",
@@ -33,6 +36,7 @@
 		"webpack-merge": "^6.0.1"
 	},
 	"devDependencies": {
+		"@place-framework/place-updater": "^1.0.1",
 		"eslint": "^9.9.1"
 	},
 	"bugs": {
